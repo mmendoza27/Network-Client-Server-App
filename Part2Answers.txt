@@ -1,0 +1,16 @@
+Part2Answers.txt
+
+A. How do you distribute the work to the hosts?
+I grab the number of hosts and store that in a variable. Next, I create 4 threads per host and allow the threads to write to the file descriptor once the connection is established with the host.
+
+
+B. How do you wait for the results to come back so that the work is done in parallel and the servers are kept busy?
+I do a pthread_join at the end once all the threads are finished. The multiple threads are communicating to the hosts and receiving notifications of prime numbers. Once they are notified that a number is prime, it adds it to an array. On the server side, each time a connection is made, it forks a child so that it can do the work in parallel as well.
+
+Both sides are attempting to use their resources as efficiently as possible.
+
+
+C. How do you collect the results for display? Remember that you cannot display anything until all values have been calculated.
+I continue adding all the prime values to an array. This array is larger than the number of primes that we are attempting to find. It's possible that threads will find additional primes and they could be less than the maximum value. In order to handle that use case, I add all primes found by a thread to the array. I then sort and only print the number of primes that was specified in the program arguments.
+
+I do have the original value printed right away and don't add it to the array since it may not be a prime. Only prime numbers are added to the array.

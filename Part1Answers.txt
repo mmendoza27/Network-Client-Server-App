@@ -1,0 +1,11 @@
+Part1Answers.txt
+
+1) In what format is the number sent from the client to the server? Your answer should have sufficient detail to allow someone to write code that sends the number to the server.
+My number is sent as a char *buffer. This works perfect with the read and write functions because they expect a (void *)buf, which technically is just any type of pointer but I felt that the string would be best because it would work even if the client and server are running on different hardware.
+
+I thought about using a long long int and passing the address to the read/write functions, but then you have to deal whether the hardware is little endian or big endian. You would use the ntohl and htonl functions, but they do not have one for long long ints, which would cause more problems. 
+
+It makes sense just to keep it as a string with an expected length and the server knows what to expect each time it reads/writes.
+
+2) How did you take into account the fact that a read does not always return the number of bytes requested?
+I used r_read, which will either return a -1 or the amount of bytes you requested to be read. This is because it is "re-entrant" and continues to read until it reads the number of bytes requested.

@@ -1,0 +1,11 @@
+Client2 Single Server
+0.016u 0.080s 1:48.58 0.0% 0+0k 0+0io 0pf+0w
+
+Client2 Three Servers
+0.020u 0.120s 0:51.98 0.2% 0+0k 0+0io 0pf+0w
+
+Client3 Single Server
+0.004u 0.028s 1:39.25 0.0% 0+0k 0+0io 0pf+0w
+
+Client 3 Three Servers
+0.000u 0.004s 0:45.75 0.0% 0+0k 0+0io 0pf+0w

@@ -1,0 +1,7 @@
+Part3Answers.txt
+
+3) What is the meaning of "small" in this context and how did you determine this?
+Since we are dealing with large numbers, small numbers can be very general. We chose a set
+of the first 25 primes. Our set is pretty large, however, all even numbers are divisible by 2, so this takes care of those. In the event that the large long long int number is not divisible by 2, 3, or 5 (most of them probably are), then we have larger numbers that we can use to find a divisor.
+
+Our list may be considered "large", but compared to the numbers we are dealing with, they are very small.

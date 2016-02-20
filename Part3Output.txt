@@ -1,0 +1,3 @@
+-rw------- 1 mamendoz students 399 2013-04-25 10:11 part3a.out
+ 21  21 399 part3a.out
+0bbde06e6313db635bd68b9c214efad3  part3a.out
